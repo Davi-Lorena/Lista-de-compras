@@ -1,0 +1,34 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* variáveis de cor */
+    --bg-primary: #f4f5fb;
+    --bg-secondary: #ffffff;
+    --color-brand: #ca3884;
+    --brand-hover: #a52c6b;
+    --danger: #c93847;
+    --content-primary: #080b12;
+--content-secondary: #374151;
+--content-tertiary: #9ca3af;
+--bd-primary: #d1d5db;
+--bd-hover: #b9c2d0;
+
+/*variáveis de fonte */
+--f-f: "Inter", sans-serif;
+--title: 600 1.5rem/2rem var(--f-f);
+--label: 550 1rem/1.25rem var(--f-f);
+--parag: 500 1rem/1.25rem var(--f-f);
+--link-sm: 500 .875rem/1rem var(--f-f);
+}
+
+.mobile-not {
+    display: none;
+}
+
+body {
+    background-color: var(--bg-primary);
+}
