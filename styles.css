@@ -31,6 +31,10 @@ ul[role="list"] {
     list-style: none;
 }
 
+.delet {
+    display: none;
+}
+
 .mobile-not {
     display: none;
 }
@@ -124,13 +128,15 @@ font: var(--link-sm);
 
     }
 
-#alert {
-    display: none;
+    
+}
+
+.alert {
+    display: flex;
     width: 100%;
     height: 2.75rem;
     background-color: var(--danger);
     border-radius: .75rem;
-    align-items: center;
     justify-content: space-between;
     padding: .75rem;
 
@@ -141,7 +147,12 @@ font: var(--link-sm);
         align-items: center;
         gap: .5rem;
     }
-}
+
+    & button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
 
 }
 
