@@ -198,3 +198,21 @@ transition: background-color 400ms ease;
     }
 
 }
+
+.error {
+    margin-top: .25rem;
+    margin-left: .5rem;
+    display: flex;
+align-items: center;
+gap: .25rem;
+font: var(--link-sm);
+color: var(--danger);
+& img {
+    width: 1rem;
+    aspect-ratio: 1;
+}
+}
+
+.danger {
+    border-color: var(--danger);
+} 

@@ -6,14 +6,17 @@ const validateInput = () => input.value.trim().length > 0
 
 
 const ul = document.querySelector("ul")
+const error = document.getElementById("errormessage")
 
 
 const addNewItem = () => {
-
     const inputIsValid = validateInput()
     if(!inputIsValid) {
-        return(alert("Digite um item!"))
-    }
+        input.classList.add("danger")
+        error.classList.replace("delet", "error")
+        return
+    } 
+
  
     const li = document.createElement("li")
     li.classList.add("item")
@@ -55,6 +58,16 @@ li.append(btn)
  }) 
 
 }
+
+input.addEventListener("change", () => {
+    const inputIsValid = validateInput()
+    if(inputIsValid) {
+        input.content == ""
+        input.classList.remove("danger")
+        error.classList.replace("error", "delet")
+        return
+    }
+})
 
 button.addEventListener("click", () => addNewItem()) 
 
