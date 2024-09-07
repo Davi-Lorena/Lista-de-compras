@@ -1,3 +1,5 @@
+/*Resetando e criando variáveis */
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -27,6 +29,13 @@
 --max-width: 375px;
 }
 
+
+body {
+    background-color: var(--bg-primary);
+}
+
+/* Classes utilitárias */
+
 ul[role="list"] {
     list-style: none;
 }
@@ -42,6 +51,8 @@ ul[role="list"] {
 .show-exc {
     display: flex;
 }
+
+/*Classes para JS */
 
 .item {
     display: flex;
@@ -73,7 +84,10 @@ ul[role="list"] {
 }
 
 &:checked {
-background-color: var(--color-brand);
+background: url(./assets/icons/state=selected.svg);
+background-size: 120%;
+background-position: 50%;
+
 }
 
 }
@@ -84,51 +98,18 @@ background-color: var(--color-brand);
        cursor: pointer;
        border: none;
        background-color: transparent;
+       transition: scale 400ms ease;
+       &:hover {
+        scale: 1.2;
+       }
     }
 
     & img {
         width: 1rem;
         aspect-ratio: 1;
-    }
-
-}
-
-body {
-    background-color: var(--bg-primary);
-}
-
-main {
-    max-width: var(--max-width);
-    margin-inline: auto;
-   display: grid;
-   gap: 2.75rem;
-padding: 5rem 2rem;
-
-    & #back {
-        display: grid;
-        gap: 1rem;
-
-& span {
-    cursor: pointer;
-    display: flex;
-    gap: .25rem;
-    color: var(--color-brand);
-font: var(--link-sm);
-
-& img {
-    rotate: 180deg;
-}
-
-}
-
-& h1 {
-    font: var(--title);
-    color: var(--content-primary);
-}
 
     }
 
-    
 }
 
 .alert {
@@ -152,8 +133,70 @@ font: var(--link-sm);
         border: none;
         background-color: transparent;
         cursor: pointer;
+        transition: scale 400ms ease;
+        &:hover {
+         scale: 1.2;
+        }
     }
 
+}
+
+.error {
+    margin-top: .25rem;
+    margin-left: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    font: var(--link-sm);
+    color: var(--danger);
+    & img {
+        width: 1rem;
+        aspect-ratio: 1;
+    }
+}
+
+.danger {
+    border-color: var(--danger);
+} 
+
+/* estilizações estruturais */
+
+main {
+    max-width: var(--max-width);
+    margin-inline: auto;
+   display: grid;
+   gap: 2.75rem;
+padding: 5rem 2rem;
+
+    & #back {
+        display: grid;
+        gap: 1rem;
+
+& span {
+    cursor: pointer;
+    display: flex;
+    gap: .25rem;
+    color: var(--color-brand);
+font: var(--link-sm);
+transition: filter 200ms ease;
+& img {
+    rotate: 180deg;
+}
+
+&:hover {
+    filter: brightness(85%);
+}
+
+}
+
+& h1 {
+    font: var(--title);
+    color: var(--content-primary);
+}
+
+    }
+
+    
 }
 
 form {
@@ -199,20 +242,4 @@ transition: background-color 400ms ease;
 
 }
 
-.error {
-    margin-top: .25rem;
-    margin-left: .5rem;
-    display: flex;
-align-items: center;
-gap: .25rem;
-font: var(--link-sm);
-color: var(--danger);
-& img {
-    width: 1rem;
-    aspect-ratio: 1;
-}
-}
-
-.danger {
-    border-color: var(--danger);
-} 
+/* Responsividade */ 
